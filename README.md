@@ -1,2 +1,1 @@
 # xhkz.github.io
-pages

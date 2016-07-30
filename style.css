@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:200");
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
 
 html, body {
-    font-family: Raleway, sans-serif;
-    font-weight: 200;
+    font-family: Lato, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #696969;
+    background-color: #808080;
 }
 
 .outer {
@@ -24,13 +23,29 @@ html, body {
 .inner {
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
+    width: 300px;
     color: white;
 }
 
 .inner > a {
     text-decoration: none;
     color: white;
-    font-size: 0.9em;
     margin: auto 5px;
+    font-weight: 200;
+    font-size: 1.2em;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 2.8em;
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .inner > a {
+        font-size: 1.1em;
+    }
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cmd</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+<body>
+<a href="assets/charm-ce.jar">PyCharm CE Settings</a>
+<pre class="prettyprint" style="border: hidden;">
+# vimrc
+syntax on
+set nu
+set nobackup
+set nowb
+set noswapfile
+set expandtab
+set shifwidth=4
+set tabstop=4
+command W w !sudo tee % > /dev/null
+
+# python env setup
+sudo apt-get install -y libssl-dev libffi-dev python-dev python3-dev libxml2-dev libxslt-dev lib32z1-dev
+sudo apt-get install python-pip python-dev build-essential
+sudo pip install --upgrade pip
+sudo pip install --upgrade virtualenv
+sudo pip install --upgrade virtualenvwrapper
+
+# oracle java setup
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+# idea vmoptions
+-server
+-Xms2g
+-Xmx2g
+-XX:NewRatio=3
+-Xss16m
+-XX:+UseConcMarkSweepGC
+-XX:+CMSParallelRemarkEnabled
+-XX:ConcGCThreads=4
+-XX:ReservedCodeCacheSize=240m
+-XX:+AlwaysPreTouch
+-XX:+TieredCompilation
+-XX:+UseCompressedOops
+-XX:SoftRefLRUPolicyMSPerMB=50
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Djsse.enableSNIExtension=false
+-Dawt.useSystemAAFontSettings=lcd
+-ea
+
+# postgresql
+CREATE USER user WITH PASSWORD 'user';
+GRANT ALL PRIVILEGES ON DATABASE db to user;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO user;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO user;
+ALTER DATABASE db OWNER TO user;
+</pre>
+</body>
+</html>

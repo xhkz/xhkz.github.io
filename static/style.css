@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300");
+@import url('https://fonts.googleapis.com/css?family=Lato:300&display=swap');
 
 html, body {
     font-family: Lato, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #808080;
+    background-color: #fff;
+    color: #666;
 }
 
 .outer {
@@ -24,28 +25,27 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     width: 300px;
-    color: white;
 }
 
 .inner > a {
     text-decoration: none;
-    color: white;
-    margin: auto 5px;
-    font-weight: 200;
-    font-size: 1.2em;
+    margin: auto 12px;
+    font-weight: 300;
+    font-size: 1.3em;
+    color: #666;
 }
 
 h1 {
-    font-weight: 200;
-    font-size: 2.8em;
+    font-weight: 300;
+    font-size: 3.5em;
 }
 
 @media only screen and (max-width: 480px) {
     h1 {
-        font-size: 2.2em;
+        font-size: 3em;
     }
 
     .inner > a {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 }
